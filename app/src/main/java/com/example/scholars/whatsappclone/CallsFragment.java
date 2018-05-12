@@ -38,8 +38,6 @@ public class CallsFragment extends Fragment {
 //        for (int i = 0; i < values.length; ++i) {
 //            chatDatesList.add(chatDates[i]);
 //        }
-//        final CustomChatAdapter adapter = new CustomChatAdapter(getActivity(), R.layout.list_item_chat, chatNameList,chatDescriptionList,chatDatesList);
-//        listview.setAdapter(adapter);
         return rootView;
     }
 

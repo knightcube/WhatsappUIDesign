@@ -3,6 +3,8 @@ package com.example.scholars.whatsappclone;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,27 +21,37 @@ public class ChatFragment extends Fragment {
     ListView listview;
     String[] values = new String[] { "Jan",
                                     "Mark",
-                                    "Sundar",
+                                    "Jack",
                                     "Rahul",
                                     "Trivago",
-                                    "Kevin"
+                                    "Kevin",
+                                    "Nikita",
+                                    "Madhur",
+                                    "Fred"
                                     };
     String[] chatDescription = new String[] { "Hey There! Are you using whatsapp?",
-                                            "All data is...ummm...safe",
+                                            "We have new updates coming up",
                                             "How is the scholarship going on?",
                                             "This morning i woke up at night",
-                                            "Kya aapne kabhi online hotel booking kiya hai?",
-                                            "Photo"
-                                    };
+                                            "Hotel?Trivago",
+                                            "Photo",
+                                            "I love this new dark mode",
+                                            "Long time no see bro",
+                                            "Saw that movie last night?"
+    };
 
     String[] chatDates = new String[] { "08:58",
             "YESTERDAY",
             "05/03/2018",
             "03/03/2018",
             "27/02/2018",
-            "26/02/2018"
+            "26/02/2018",
+            "24/02/2018",
+            "23/02/2018",
+            "26/1/2018"
     };
-
+    private RecyclerView chatRecyclerView;
+    private CustomChatRecyclerAdapter chatAdapter;
     public ChatFragment() {
         // Required empty public constructor
     }
@@ -50,7 +62,7 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
-        listview = rootView.findViewById(R.id.chat_list);
+        chatRecyclerView = rootView.findViewById(R.id.chat_list);
         final ArrayList<String> chatNameList = new ArrayList<String>();
         for (int i = 0; i < values.length; ++i) {
             chatNameList.add(values[i]);
@@ -63,8 +75,9 @@ public class ChatFragment extends Fragment {
         for (int i = 0; i < values.length; ++i) {
             chatDatesList.add(chatDates[i]);
         }
-        final CustomChatAdapter adapter = new CustomChatAdapter(getActivity(), R.layout.list_item_chat, chatNameList,chatDescriptionList,chatDatesList);
-        listview.setAdapter(adapter);
+        chatRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        chatAdapter = new CustomChatRecyclerAdapter(getContext(),chatNameList,chatDescriptionList,chatDatesList);
+        chatRecyclerView.setAdapter(chatAdapter);
         return rootView;
     }
 

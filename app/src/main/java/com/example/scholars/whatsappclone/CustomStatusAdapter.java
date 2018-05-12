@@ -27,7 +27,7 @@ public class CustomStatusAdapter extends RecyclerView.Adapter<CustomStatusAdapte
     @NonNull
     @Override
     public StatusHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.status_item_layout, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_status, parent,false);
         return new StatusHolder(view);
     }
 

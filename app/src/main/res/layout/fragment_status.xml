@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/list_item"
-            layout = "@layout/status_item_layout"
+            layout = "@layout/list_item_status"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
@@ -34,15 +34,11 @@
             android:textStyle="normal" />
 
         <android.support.v7.widget.RecyclerView
-            android:nestedScrollingEnabled="true"
             android:id="@+id/status_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </android.support.v7.widget.RecyclerView>
-
-
-
 
     </LinearLayout>
     </ScrollView>

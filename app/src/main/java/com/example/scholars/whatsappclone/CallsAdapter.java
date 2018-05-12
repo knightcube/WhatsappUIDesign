@@ -25,7 +25,7 @@ public class CallsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.call_item_layout,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_call,
                 parent,false);
 
         return new ChatHolder(view);

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="6dip">
+    android:padding="6dp"
+    android:layout_marginBottom="4dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/icon"
@@ -35,6 +36,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_alignParentTop="true"
+        android:textColor="@color/colorSecondaryText"
         android:layout_alignWithParentIfMissing="true"
         android:gravity="center_vertical"
         android:text="YESTERDAY"
@@ -64,10 +66,12 @@
         android:layout_toEndOf="@+id/icon"
         android:ellipsize="end"
         android:maxLines="1"
+        android:textColor="@color/colorSecondaryText"
         android:layout_marginTop="4dp"
         android:text="Hey! How are you?"
         android:textSize="12sp" />
     <TextView
+        android:id="@+id/chat_divider"
         android:layout_below="@id/icon"
         android:layout_width="match_parent"
         android:layout_height="1dp"
