@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,8 +24,23 @@ public class CallsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calls, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
+//        listview = rootView.findViewById(R.id.chat_list);
+//        final ArrayList<String> chatNameList = new ArrayList<String>();
+//        for (int i = 0; i < values.length; ++i) {
+//            chatNameList.add(values[i]);
+//        }
+//        final ArrayList<String> chatDescriptionList = new ArrayList<String>();
+//        for (int i = 0; i < values.length; ++i) {
+//            chatDescriptionList.add(chatDescription[i]);
+//        }
+//        final ArrayList<String> chatDatesList = new ArrayList<String>();
+//        for (int i = 0; i < values.length; ++i) {
+//            chatDatesList.add(chatDates[i]);
+//        }
+//        final CustomChatAdapter adapter = new CustomChatAdapter(getActivity(), R.layout.list_item_chat, chatNameList,chatDescriptionList,chatDatesList);
+//        listview.setAdapter(adapter);
+        return rootView;
     }
 
 }

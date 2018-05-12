@@ -6,4 +6,6 @@
     <color name="colorAccent">#20c253</color>
     <color name="colorLightGray">#f1f1f1</color>
     <color name="colorCaption">#000</color>
+    <color name="colorSecondaryText">#737373</color>
+    <color name="colorDarkTheme">#011815</color>
 </resources>

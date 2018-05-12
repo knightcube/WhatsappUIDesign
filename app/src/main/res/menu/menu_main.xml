@@ -3,9 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.scholars.whatsappclone.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_light"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Light"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_dark"
+        android:orderInCategory="100"
+        android:title="Dark"
         app:showAsAction="never" />
     <item
         android:orderInCategory="100"

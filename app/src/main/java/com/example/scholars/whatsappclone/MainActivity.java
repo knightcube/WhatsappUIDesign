@@ -1,5 +1,6 @@
 package com.example.scholars.whatsappclone;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private SharedPreferences.Editor sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
+        sharedPreferences = getSharedPreferences("THEME_CODE",MODE_PRIVATE).edit();
+        SharedPreferences prefs = getSharedPreferences("THEME_CODE",MODE_PRIVATE);
+        if(prefs.getInt("theme_code",0)==2){
+            viewPager.setBackgroundColor(getResources().getColor(R.color.colorDarkTheme));
+        }else{
+            viewPager.setBackgroundColor(getResources().getColor(R.color.colorSelected));
+        }
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -39,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ChatFragment(), "Chat");
-        adapter.addFragment(new CallsFragment(), "Calls");
         adapter.addFragment(new StatusFragment(), "Status");
+        adapter.addFragment(new CallsFragment(), "Calls");
         viewPager.setAdapter(adapter);
     }
 
@@ -88,7 +96,18 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_light) {
+            viewPager.setBackgroundColor(getResources().getColor(R.color.colorSelected));
+            sharedPreferences.putInt("theme_code",1);
+            sharedPreferences.apply();
+            recreate();
+            return true;
+        }
+        if(id == R.id.action_dark){
+            viewPager.setBackgroundColor(getResources().getColor(R.color.colorDarkTheme));
+            sharedPreferences.putInt("theme_code",2);
+            sharedPreferences.apply();
+            recreate();
             return true;
         }
 

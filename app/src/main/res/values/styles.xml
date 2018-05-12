@@ -18,5 +18,20 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorCaption</item>
     </style>
+    
+    <style name="Dark" >
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#FF0</item>
+        <item name="colorAccent">#F0F</item>
+        <item name="themeColorPrimary">@color/colorAccent</item>
+    </style>
+    <style name="Light">
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#FF0</item>
+        <item name="colorAccent">#F0F</item>
+        <item name="themeColorPrimary">@color/colorPrimary</item>
+
+    </style>
+
 
 </resources>

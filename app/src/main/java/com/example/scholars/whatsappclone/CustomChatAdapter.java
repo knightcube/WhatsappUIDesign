@@ -2,6 +2,7 @@ package com.example.scholars.whatsappclone;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +25,16 @@ public class CustomChatAdapter extends ArrayAdapter<String>{
     private List<String> chatNames;
     private List<String> chatDescriptions;
     private List<String> chatDates;
+    private SharedPreferences prefs;
     public CustomChatAdapter(@NonNull Context context, int resource, List<String> chatNames, ArrayList<String> chatDescriptionList, ArrayList<String> chatDatesList) {
         super(context,-1,chatNames);
         this.context = context;
         this.chatNames = chatNames;
         this.chatDescriptions = chatDescriptionList;
         this.chatDates = chatDatesList;
+        prefs = context.getSharedPreferences("THEME_CODE",Context.MODE_PRIVATE);
     }
+
     @SuppressLint("NewApi")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -45,6 +49,16 @@ public class CustomChatAdapter extends ArrayAdapter<String>{
         chatNameText.setText(chatNames.get(position));
         chatDescriptionText.setText(chatDescriptions.get(position));
         chatDateText.setText(chatDates.get(position));
+
+        if(prefs.getInt("theme_code",0)==2){
+            chatNameText.setTextColor(context.getResources().getColor(R.color.colorSelected));
+            chatDescriptionText.setTextColor(context.getResources().getColor(R.color.colorSecondaryText));
+        }else{
+            chatNameText.setTextColor(context.getResources().getColor(R.color.colorDarkTheme));
+            chatDescriptionText.setTextColor(context.getResources().getColor(R.color.colorSecondaryText));
+        }
+
+
         if(getRandomNumber()<2){
             chatDateText.setTextColor(context.getColor(R.color.colorAccent));
             chatNotifsText.setVisibility(View.VISIBLE);

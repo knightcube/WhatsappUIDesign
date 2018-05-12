@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WhatsappClone.iml" filepath="$PROJECT_DIR$/WhatsappClone.iml" />
+      <module fileurl="file://C:\Users\Anurag\AndroidStudioProjects\Scholarship\Forked\WhatsappUIDesign\WhatsappClone.iml" filepath="C:\Users\Anurag\AndroidStudioProjects\Scholarship\Forked\WhatsappUIDesign\WhatsappClone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WhatsappUIDesign.iml" filepath="$PROJECT_DIR$/WhatsappUIDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

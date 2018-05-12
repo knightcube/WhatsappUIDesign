@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="4dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/caller_image"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="6dp"
+        app:civ_border_width="0.5dp"
+        app:civ_border_color="#FF000000"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/anonymous" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/caller_image"
+        android:layout_toRightOf="@id/caller_image">
+
+        <TextView
+            android:id="@+id/caller_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="top"
+            android:text="John Doe"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/call_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/caller_name">
+
+            <ImageView
+                android:id="@+id/call_type"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_check" />
+
+            <TextView
+                android:id="@+id/call_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/call_type"
+                android:text="Yesterday, 7:14 PM"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/call_type" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/call_icon"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_check"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>
