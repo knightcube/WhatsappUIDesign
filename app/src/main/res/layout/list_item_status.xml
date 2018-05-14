@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:gravity="top"
-            android:text="John Doe"
+            android:text="My Status"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
